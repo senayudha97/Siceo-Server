@@ -1,0 +1,5 @@
+593090912196-in77ml0e1mu060nv2dq6bkf5avqiem8c.apps.googleusercontent.com
+Ig0rGReoM9ba9etInwHcF7Y_
+
+Format Object Api
+object(Google_Service_Oauth2_Userinfo)#73 (14) { ["internal_gapi_mappings":protected]=> array(3) { ["familyName"]=> string(11) "family_name" ["givenName"]=> string(10) "given_name" ["verifiedEmail"]=> string(14) "verified_email" } ["email"]=> string(24) "chickchipsgame@gmail.com" ["familyName"]=> string(5) "Chips" ["gender"]=> NULL ["givenName"]=> string(5) "Chick" ["hd"]=> NULL ["id"]=> string(21) "108329602868224589939" ["link"]=> NULL ["locale"]=> string(5) "en-GB" ["name"]=> string(11) "Chick Chips" ["picture"]=> string(121) "https://lh4.googleusercontent.com/-ndYMxN3CbSo/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclbyqZbOPNJDiuGitjma8VUajviUA/s96-c/photo.jpg" ["verifiedEmail"]=> bool(true) ["modelData":protected]=> array(3) { ["verified_email"]=> bool(true) ["given_name"]=> string(5) "Chick" ["family_name"]=> string(5) "Chips" } ["processed":protected]=> array(0) { } } 

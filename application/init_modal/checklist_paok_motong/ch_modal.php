@@ -1,0 +1,102 @@
+<div class="modal fade" id="ch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cylinder Head</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Pelumasan</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_a">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Getaran</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_b">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Bunyi</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_c">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kebocoran Pelumas</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_d">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kebocoran Solar</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_e">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kebocoran Air</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_f">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kebocoran Gas Buang</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_g">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kondisi Baut</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_h">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <label for="">Kebersihan</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <p id="ch_i">Kosong</p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

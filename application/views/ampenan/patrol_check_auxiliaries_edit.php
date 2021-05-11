@@ -1,0 +1,860 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <?php if (validation_errors()) : ?>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <?= validation_errors(); ?>
+        </div>
+    <?php endif; ?>
+
+    <?= $this->session->flashdata('message'); ?>
+
+    <h1 class="h3 mb-4 text-gray-800">Ubah Data <?= $title; ?></h1>
+    <di class="row">
+        <div class="col-lg-12">
+            <form action="<?= base_url('patrol_check_auxiliaries/edit'); ?>" method="POST">
+                <div id="hidden_field">
+                    <input type="text" name="pk[pk_patrol_check_auxiliaries]" value="<?= $edit['pk_patrol_check_auxiliaries']; ?>">
+                    <input type="text" name="input[update_by]" value="<?= $user['id']; ?>">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label for="tanggal_input" class="col-sm-3 col-form-label">Tanggal Input</label>
+                            <div class="col-sm-9">
+                                <input type="text" required readonly class="form-control easydatepicker" value="<?= content_date($edit['tanggal_input']); ?>" id="tanggal_input" placeholder="Klik untuk input tanggal" name="input[tanggal_input]">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label for="waktu" class="col-sm-3 col-form-label">Waktu Input</label>
+                            <div class="col-sm-9">
+                                <input type="text" required class="form-control easytimepicker" value="<?= $edit['waktu']; ?>" id="waktu" name="input[waktu]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div class="row mt-3">
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        LO Purifier / Separator / COC
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Pelumasan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_a]" id="lo_a1" value="Normal">
+                                                    <label class="form-check-label" for="lo_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_a]" id="lo_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_b]" id="lo_b1" value="Normal">
+                                                    <label class="form-check-label" for="lo_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_b]" id="lo_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Bunyi</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_c]" id="lo_c1" value="Normal">
+                                                    <label class="form-check-label" for="lo_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_c]" id="lo_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran pelumas</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_d'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_d]" id="lo_d1" value="Normal">
+                                                    <label class="form-check-label" for="lo_d1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_d'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_d]" id="lo_d2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_d2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran air</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_e'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_e]" id="lo_e1" value="Normal">
+                                                    <label class="form-check-label" for="lo_e1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_e'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_e]" id="lo_e2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_e2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_f'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_f]" id="lo_f1" value="Normal">
+                                                    <label class="form-check-label" for="lo_f1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_f'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_f]" id="lo_f2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_f2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebersihan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_g'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_g]" id="lo_g1" value="Normal">
+                                                    <label class="form-check-label" for="lo_g1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['lo_g'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[lo_g]" id="lo_g2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="lo_g2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        FO Separator
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Pelumasan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_a]" id="fo_a1" value="Normal">
+                                                    <label class="form-check-label" for="fo_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_a]" id="fo_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_b]" id="fo_b1" value="Normal">
+                                                    <label class="form-check-label" for="fo_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_b]" id="fo_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Bunyi</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_c]" id="fo_c1" value="Normal">
+                                                    <label class="form-check-label" for="fo_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_c]" id="fo_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran pelumas</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_d'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_d]" id="fo_d1" value="Normal">
+                                                    <label class="form-check-label" for="fo_d1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_d'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_d]" id="fo_d2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_d2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran solar</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_e'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_e]" id="fo_e1" value="Normal">
+                                                    <label class="form-check-label" for="fo_e1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_e'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_e]" id="fo_e2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_e2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_f'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_f]" id="fo_f1" value="Normal">
+                                                    <label class="form-check-label" for="fo_f1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_f'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_f]" id="fo_f2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_f2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebersihan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_g'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_g]" id="fo_g1" value="Normal">
+                                                    <label class="form-check-label" for="fo_g1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['fo_g'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[fo_g]" id="fo_g2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="fo_g2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        Intercooler / Radiator
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran turbocharger</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_a]" id="ir_a1" value="Normal">
+                                                    <label class="form-check-label" for="ir_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_a]" id="ir_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="ir_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran air</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_b]" id="ir_b1" value="Normal">
+                                                    <label class="form-check-label" for="ir_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_b]" id="ir_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="ir_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran pelumas</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_c]" id="ir_c1" value="Normal">
+                                                    <label class="form-check-label" for="ir_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_c]" id="ir_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="ir_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_d'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_d]" id="ir_d1" value="Normal">
+                                                    <label class="form-check-label" for="ir_d1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_d'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_d]" id="ir_d2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="ir_d2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebersihan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_e'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_e]" id="ir_e1" value="Normal">
+                                                    <label class="form-check-label" for="ir_e1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['ir_e'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[ir_e]" id="ir_e2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="ir_e2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                        </div>
+                        <div class="row mt-3">
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        Komperessor
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Pelumasan</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_a]" id="k_a1" value="Normal">
+                                                    <label class="form-check-label" for="k_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_a]" id="k_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="k_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_b]" id="k_b1" value="Normal">
+                                                    <label class="form-check-label" for="k_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_b]" id="k_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="k_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Bunyi</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_c]" id="k_c1" value="Normal">
+                                                    <label class="form-check-label" for="k_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_c]" id="k_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="k_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran pelumas</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_d'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_d]" id="k_d1" value="Normal">
+                                                    <label class="form-check-label" for="k_d1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_d'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_d]" id="k_d2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="k_d2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran udara</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_e'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_e]" id="k_e1" value="Normal">
+                                                    <label class="form-check-label" for="k_e1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['k_e'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[k_e]" id="k_e2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="k_e2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        Pemipaan pelumas
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_a]" id="pp_a1" value="Normal">
+                                                    <label class="form-check-label" for="pp_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_a]" id="pp_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pp_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran pelumas</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_b]" id="pp_b1" value="Normal">
+                                                    <label class="form-check-label" for="pp_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_b]" id="pp_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pp_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut pengikat</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_c]" id="pp_c1" value="Normal">
+                                                    <label class="form-check-label" for="pp_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pp_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pp_c]" id="pp_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pp_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        Pemipaan bahan bakar
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_a]" id="pbb_a1" value="Normal">
+                                                    <label class="form-check-label" for="pbb_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_a]" id="pbb_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pbb_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran bahan bakar</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_b]" id="pbb_b1" value="Normal">
+                                                    <label class="form-check-label" for="pbb_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_b]" id="pbb_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pbb_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut pengikat</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_c]" id="pbb_c1" value="Normal">
+                                                    <label class="form-check-label" for="pbb_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pbb_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pbb_c]" id="pbb_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pbb_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                        </div>
+                        <div class="row mt-3">
+                            <!-- Awal untuk card baru horizontal -->
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-light">
+                                        Pemipaan air pendingin mesin
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Getaran</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_a'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_a]" id="pap_a1" value="Normal">
+                                                    <label class="form-check-label" for="pap_a1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_a'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_a]" id="pap_a2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pap_a2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kebocoran air</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_b'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_b]" id="pap_b1" value="Normal">
+                                                    <label class="form-check-label" for="pap_b1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_b'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_b]" id="pap_b2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pap_b2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                        <!-- Awal checklist baru -->
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <label for="">Kondisi baut pengikat</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_c'] == 'Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_c]" id="pap_c1" value="Normal">
+                                                    <label class="form-check-label" for="pap_c1">Normal</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" <?php if ($edit['pap_c'] == 'Tidak Normal') {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> name="input[pap_c]" id="pap_c2" value="Tidak Normal">
+                                                    <label class="form-check-label" for="pap_c2">Tidak Normal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Akhir checklist baru -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Card baru horizontal -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mt-3">
+                    <button type="submit" class="btn btn-primary ">Ubah</button>
+                </div>
+            </form>
+        </div>
+    </di>
+</div>
+</div>

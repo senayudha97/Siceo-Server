@@ -1,0 +1,45 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-03-13 05:42:07 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 05:42:07 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:10:49 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:10:49 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:18:06 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:18:06 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:18:12 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:18:13 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:19:24 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:19:28 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:20:03 --> 404 Page Not Found: Logout/index
+ERROR - 2021-03-13 15:20:13 --> Query error: Unknown column 'user' in 'field list' - Invalid query: INSERT INTO `notifikasi` (`pesan`, `status`, `user`) VALUES ('Coba Trigger', 1, '5')
+ERROR - 2021-03-13 15:22:18 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:22:18 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:27:18 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:27:18 --> 404 Page Not Found: Vendor/dataTables
+ERROR - 2021-03-13 15:28:02 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:28:03 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:29:04 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:29:04 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:29:12 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:29:39 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:32:11 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:32:11 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:32:41 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:32:41 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:33:45 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:33:45 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:33:47 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:33:49 --> 404 Page Not Found: Log_paok_motong_beban_penyulang/index.html
+ERROR - 2021-03-13 15:33:49 --> 404 Page Not Found: Log_paok_motong_beban_penyulang/index.html
+ERROR - 2021-03-13 15:33:50 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:33:50 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:33:52 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:33:52 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:34:04 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:34:04 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:34:08 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:34:08 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:34:11 --> 404 Page Not Found: Assets/vendor
+ERROR - 2021-03-13 15:34:12 --> 404 Page Not Found: Vendor/datatables
+ERROR - 2021-03-13 15:35:02 --> 404 Page Not Found: Vendor/fontawesome-free
+ERROR - 2021-03-13 15:35:03 --> 404 Page Not Found: Vendor/fontawesome-free
