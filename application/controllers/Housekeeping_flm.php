@@ -46,10 +46,26 @@ class Housekeeping_flm extends Guide
             $this->load->view('templates/footer');
         } else {
             $arr_data = $this->input->post('input');
-            $arr_multi = $this->input->post('data');
+
+            // Eviden 1 Upload handler
+            $namaSementara = $_FILES['eviden_1']['tmp_name'];
+            $temp = explode(".", $_FILES["eviden_1"]["name"]);
+            $newfilenameeviden1 = 'eviden_1_' . round(microtime(true)) . '.' . end($temp);
+            $file_type = $_FILES['eviden_1']['type'];
+            $this->do_upload($namaSementara, $newfilenameeviden1, $file_type);
+
+            // Eviden 2 Upload handler
+            $namaSementara = $_FILES['eviden_2']['tmp_name'];
+            $temp = explode(".", $_FILES["eviden_2"]["name"]);
+            $newfilenameeviden2 = 'eviden_2_' . round(microtime(true)) . '.' . end($temp);
+            $file_type = $_FILES['eviden_2']['type'];
+            $this->do_upload($namaSementara, $newfilenameeviden2, $file_type);
+
+            // Join to arr_data
+            $arr_data['eviden_1'] = $newfilenameeviden1;
+            $arr_data['eviden_2'] = $newfilenameeviden2;
 
             $arr_data['tanggal_input'] = date_to_db($arr_data['tanggal_input']);
-            $this->Tbl_paok_motong->auto_insert_multiple($arr_multi, 'housekeeping_flm_detail');
             $this->Tbl_paok_motong->insert_housekeeping_flm($arr_data);
             $this->flash_success('Menambah Housekeeping dan FLM');
             redirect('housekeeping_flm');
@@ -147,7 +163,7 @@ class Housekeeping_flm extends Guide
             $writer->save('php://output');
         } else {
             // Page Config
-            $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-L', 'tempDir' =>'/home/upk/tempPDF']);
+            $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-L']);
             $mpdf->setFooter('{PAGENO}');
 
             // Printout
@@ -155,6 +171,25 @@ class Housekeeping_flm extends Guide
             $data = $this->load->view('paok_motong/housekeeping_flm_rep', $param, TRUE);
             $mpdf->WriteHTML($data);
             $mpdf->Output($filename, 'I');
+        }
+    }
+
+    function do_upload($namaSementara, $newfilename, $file_type)
+    {
+        $allowed = array("image/jpeg", "image/gif", "image/png");
+        if (!in_array($file_type, $allowed)) {
+            $error_message = 'Format File yg Anda Upload Salah';
+            echo $error_message;
+            exit;
+        }
+
+        $dirUpload =  './file_upload/house_keeping/';
+        $terupload = move_uploaded_file($namaSementara, $dirUpload . $newfilename);
+
+        if ($terupload) {
+            echo "Upload berhasil!<br/>";
+        } else {
+            echo "Upload Gagal!";
         }
     }
 }

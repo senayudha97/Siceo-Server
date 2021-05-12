@@ -46,7 +46,8 @@
                         <th class="tg-0lax">Jenis Kegiatan</th>
                         <th class="tg-0lax">Location</th>
                         <th class="tg-0lax">Description</th>
-                        <th class="tg-0lax">Eviden</th>
+                        <th class="tg-0lax">Eviden 1</th>
+                        <th class="tg-0lax">Eviden 2</th>
                         <th class="tg-0lax">Checked by</th>
                         <th class="tg-0lax">Action</th>
                     </tr>
@@ -61,7 +62,10 @@
                             <td><?= ($value['location']); ?></td>
                             <td><?= ($value['description']); ?></td>
                             <td>
-                                <div class="btn btn-success btn-sm btn-sm anggota_serah" data-id="<?= $value['pk_housekeeping_flm']; ?>" data-toggle="modal" data-target="#anggota_serah"><span class="fa fa-info-circle"> &nbsp;</span>Lihat Detail</div></a>
+                                <img class="card-img" src="<?= base_url('file_upload/house_keeping/') . $value['eviden_1']; ?>" alt="">
+                            </td>
+                            <td>
+                                <img class="card-img" src="<?= base_url('file_upload/house_keeping/') . $value['eviden_2']; ?>" alt="">
                             </td>
                             <td><?= ($value['checked_by']); ?></td>
                             <td>

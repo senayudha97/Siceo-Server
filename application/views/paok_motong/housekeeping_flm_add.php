@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-11">
-            <form action="<?= base_url('housekeeping_flm/add'); ?>" method="POST">
+            <form action="<?= base_url('housekeeping_flm/add'); ?>" method="POST" enctype="multipart/form-data">
 
                 <h1 class="h3 mb-4 text-gray-800">Tambah Data <?= $title; ?></h1>
                 <div id="hidden_field">
-                    <input type="hidden" name="input[created_date]" value="<?= 'SM' . date('Y-m-d'); ?>">
-                    <input type="hidden" name="input[pk_housekeeping_flm]" value="<?= 'SM' . date('Ydhs'); ?>">
+                    <input type="hidden" name="input[created_date]" value="<?= 'HF' . date('Y-m-d'); ?>">
+                    <input type="hidden" name="input[pk_housekeeping_flm]" value="<?= 'HF' . date('Ydhs'); ?>">
                     <input type="hidden" value="<?= $user['id']; ?>" name="input[insert_by]">
                 </div>
 
@@ -47,7 +47,8 @@
                 <div class="form-group row">
                     <label for="eviden" class="col-sm-2 col-form-label">Eviden</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control-file" id="eviden" name="input[eviden]">
+                        <input type="file" class="form-control-file" id="eviden_1" name="eviden_1">
+                        <input type="file" class="form-control-file mt-3" id="eviden_2" name="eviden_2">
                     </div>
                 </div>
                 <div class="form-group row">

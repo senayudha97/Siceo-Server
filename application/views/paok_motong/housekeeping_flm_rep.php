@@ -47,7 +47,7 @@
                 <td colspan="2">Eviden</td>
                 <td rowspan="2">Checked by</td>
             </tr>
-            <tr>
+            <tr class="heading title">
                 <td>Eviden 1</td>
                 <td>Eviden 2</td>
             </tr>
@@ -61,8 +61,12 @@
                     <td><?= content_date($row['tanggal_input']); ?></td>
                     <td><?= $row['location']; ?></td>
                     <td><?= $row['description']; ?></td>
-                    <td><img src="<?= $row['eviden_1']; ?>" alt=""></td>
-                    <td><img src="<?= $row['eviden_2']; ?>" alt=""></td>
+                    <td>
+                        <img style="width: 400px;" src="<?= base_url('file_upload/house_keeping/') . $row['eviden_1']; ?>" alt="">
+                    </td>
+                    <td>
+                        <img style="width: 400px;" src="<?= base_url('file_upload/house_keeping/') . $row['eviden_2']; ?>" alt="">
+                    </td>
                     <td><?= $row['checked_by']; ?></td>
                 </tr>
             <?php $no++;
